@@ -1,7 +1,7 @@
 <template>
   <div style="height:100%;">
     <view-box ref="viewBox" body-padding-bottom="55px">
-      <transition :name="'vux-pop-' + (direction === 'forward' ? 'in' : 'out')">
+      <transition :name="transitionName">
         <router-view class="router-view"></router-view>
       </transition>
       <tabbar class="vux-demo-tabbar" slot="bottom">
@@ -20,11 +20,13 @@
 
 <script>
   import { XHeader, ViewBox, Tabbar, TabbarItem, TransferDom } from 'vux'
+  import {mapState} from 'vuex'
   export default {
     name: 'home',
+    created () {
+    },
     data () {
       return {
-        direction: 'forward'
       }
     },
     directives: {
@@ -36,8 +38,14 @@
       Tabbar,
       TabbarItem
     },
-    created () {
-
+    computed: {
+      ...mapState({
+        direction: ({home}) => home.direction
+      }),
+      transitionName () {
+        console.log(this.direction)
+        return 'vux-pop-' + (this.direction === 'forward' ? 'in' : 'out')
+      }
     }
   }
 </script>
