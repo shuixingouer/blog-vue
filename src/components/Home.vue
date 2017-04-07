@@ -1,7 +1,9 @@
 <template>
   <div style="height:100%;">
     <view-box ref="viewBox" body-padding-bottom="55px">
-      <router-view></router-view>
+      <transition :name="'vux-pop-' + (direction === 'forward' ? 'in' : 'out')">
+        <router-view class="router-view"></router-view>
+      </transition>
       <tabbar class="vux-demo-tabbar" slot="bottom">
         <tabbar-item :link="{path:'/Main'}">
           <span class="demo-icon-22 vux-demo-tabbar-icon-home" slot="icon">&#xe637;</span>
@@ -17,41 +19,64 @@
 </template>
 
 <script>
-  import { XHeader, ViewBox, Tabbar, TabbarItem } from 'vux'
+  import { XHeader, ViewBox, Tabbar, TabbarItem, TransferDom } from 'vux'
+  import { mapState } from 'vuex'
   export default {
     name: 'home',
     data () {
       return {
       }
     },
+    directives: {
+      TransferDom
+    },
     components: {
       ViewBox,
       XHeader,
       Tabbar,
       TabbarItem
+    },
+    computed: {
+      ...mapState({
+        direction: state => state.vux.direction
+      })
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .demo-icon-22 {
-    font-family: 'vux-demo';
-    font-size: 22px;
-    color: #888;
+  /*滑屏*/
+  .router-view {
+    width: 100%;
+    top: 46px;
   }
-  .weui-tabbar.vux-demo-tabbar {
-    /** backdrop-filter: blur(10px);
-    background-color: none;
-    background: rgba(247, 247, 250, 0.5);**/
+  .vux-pop-out-enter-active,
+  .vux-pop-out-leave-active,
+  .vux-pop-in-enter-active,
+  .vux-pop-in-leave-active {
+    will-change: transform;
+    transition: all 500ms;
+    height: 100%;
+    top: 46px;
+    position: absolute;
+    backface-visibility: hidden;
+    perspective: 1000;
   }
-  .vux-demo-tabbar .weui-bar__item_on .demo-icon-22 {
-    color: #F70968;
+  .vux-pop-out-enter {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
   }
-  .vux-demo-tabbar .weui-tabbar_item.weui-bar__item_on .vux-demo-tabbar-icon-home {
-    color: rgb(53, 73, 94);
+  .vux-pop-out-leave-active {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
   }
-  .demo-icon-22:before {
-    content: attr(icon);
+  .vux-pop-in-enter {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  .vux-pop-in-leave-active {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
   }
 </style>

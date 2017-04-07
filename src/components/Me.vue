@@ -4,7 +4,32 @@
     <blur :blur-amount=40 :url="url">
       <p class="center"><img :src="url"><br/>水星</p>
     </blur>
-    <!--选项-->
+    <!--用户选项-->
+    <card>
+      <div slot="content" class="card-demo-flex card-demo-content01">
+        <div class="vux-1px-r">
+          <span class="demo-icon-22" slot="icon">&#xe633;</span>
+          <br/>
+          我的评论
+        </div>
+        <div class="vux-1px-r">
+          <span class="demo-icon-22" slot="icon">&#xe633;</span>
+          <br/>
+          我的回复
+        </div>
+        <div class="vux-1px-r">
+          <span class="demo-icon-22" slot="icon">&#xe633;</span>
+          <br/>
+          我的收藏
+        </div>
+        <div>
+          <span class="demo-icon-22" slot="icon">&#xe633;</span>
+          <br/>
+          我的点赞
+        </div>
+      </div>
+    </card>
+    <!--管理员选项-->
     <card>
       <div slot="content" class="card-demo-flex card-demo-content01">
         <div class="vux-1px-r">
@@ -20,17 +45,23 @@
         <div class="vux-1px-r">
           <span class="demo-icon-22" slot="icon">&#xe633;</span>
           <br/>
-          已发表
+          文章管理
         </div>
         <div>
           <span class="demo-icon-22" slot="icon">&#xe633;</span>
-          <badge text="8"></badge>
           <br/>
-          评论
+          类别管理
         </div>
       </div>
     </card>
-    <!--其他信息-->
+    <!--管理员其他信息-->
+    <group>
+      <cell title="我的评论" :link="{path:'/demo'}"><span class="demo-icon-22" slot="icon">&#xe633;</span></cell>
+      <cell title="我的回复" :link="{path:'/demo'}"><span class="demo-icon-22" slot="icon">&#xe633;</span></cell>
+      <cell title="我的收藏" :link="{path:'/demo'}"><span class="demo-icon-22" slot="icon">&#xe633;</span></cell>
+      <cell title="我的点赞" :link="{path:'/demo'}"><span class="demo-icon-22" slot="icon">&#xe633;</span></cell>
+    </group>
+    <!--用户其他信息-->
     <group>
       <cell title="完善信息" :link="{path:'/demo'}"><span class="demo-icon-22" slot="icon">&#xe633;</span></cell>
       <cell title="联系我们" :link="{path:'/demo'}"><span class="demo-icon-22" slot="icon">&#xe633;</span></cell>
