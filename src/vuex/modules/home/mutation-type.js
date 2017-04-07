@@ -1,2 +1,2 @@
-export const CHANNEL_MENU = 'CHANNEL_MENU'
+export const UPDATE_DIRECTION = 'UPDATE_DIRECTION'
 
