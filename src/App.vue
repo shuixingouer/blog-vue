@@ -16,7 +16,7 @@ export default {
 @import '~vux/src/styles/tap.less';
 
 body {
-  background-color: #fbf9fe;
+  background-color: #f8f8f8;
 }
 html, body {
   height: 100%;
