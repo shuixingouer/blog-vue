@@ -20,11 +20,11 @@
 
 <script>
   import { XHeader, ViewBox, Tabbar, TabbarItem, TransferDom } from 'vux'
-  import { mapState } from 'vuex'
   export default {
     name: 'home',
     data () {
       return {
+        direction: 'forward'
       }
     },
     directives: {
@@ -36,10 +36,8 @@
       Tabbar,
       TabbarItem
     },
-    computed: {
-      ...mapState({
-        direction: state => state.vux.direction
-      })
+    created () {
+
     }
   }
 </script>
@@ -49,7 +47,7 @@
   /*滑屏*/
   .router-view {
     width: 100%;
-    top: 46px;
+    top: 0px;
   }
   .vux-pop-out-enter-active,
   .vux-pop-out-leave-active,
@@ -58,7 +56,7 @@
     will-change: transform;
     transition: all 500ms;
     height: 100%;
-    top: 46px;
+    top: 0px;
     position: absolute;
     backface-visibility: hidden;
     perspective: 1000;
