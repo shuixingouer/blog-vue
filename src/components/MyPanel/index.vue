@@ -12,15 +12,13 @@
           <div class="weui-media-box__hd" v-if="item.src">
             <img class="weui-media-box__thumb" :src="item.src" alt="">
           </div>
+          <div class="userInfoLeft">
+            <img :src="item.userIconSrc" /><span>{{item.dateNow}}</span>
+          </div>
+          <div class="userInfoRight">
+            <img :src="item.userSeeSrc" /><span>{{item.seeNum}}</span>
+          </div>
         </a>
-        <div>
-          <div>
-            <img src=''/><span>{{dateNow}}</span>
-          </div>
-          <div>
-            <img src=''/><span>{{seeNum}}</span>
-          </div>
-        </div>
       </template>
       <!--type==='2'-->
       <template v-if="type === '2'">
@@ -107,5 +105,39 @@ export default {
 }
 .weui-media-box__title{
   margin: 0 0 5px 0;
+}
+.weui-media-box.weui-media-box_appmsg{
+  padding-bottom:40px;
+}
+.userInfoLeft{
+  position: absolute;
+  bottom: 10px;
+  font-family:"宋体";
+  font-size:13px;
+  color:#aaa;
+  line-height:20px;
+  font-weight:normal;
+  left:15px;
+  img{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    margin:0 4px -5px 0;
+  }
+}
+.userInfoRight{
+  position: absolute;
+  bottom: 10px;
+  font-family:"宋体";
+  font-size:13px;
+  color:#aaa;
+  line-height:20px;
+  font-weight:normal;
+  right:15px;
+  img{
+    width:24px;
+    margin:0 4px -7px 0;
+    opacity:0.3;
+  }
 }
 </style>
