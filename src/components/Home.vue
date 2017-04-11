@@ -43,7 +43,6 @@
         direction: ({home}) => home.direction
       }),
       transitionName () {
-        console.log(this.direction)
         return 'vux-pop-' + (this.direction === 'forward' ? 'in' : 'out')
       }
     }

@@ -13,7 +13,7 @@
             <img class="weui-media-box__thumb" :src="item.src" alt="">
           </div>
           <div class="userInfoLeft">
-            <img :src="item.userIconSrc" /><span>{{item.dateNow}}</span>
+            <img :src="item.userIconSrc" /><span class="userName">{{item.userNmae}}</span>|<span>{{item.dateNow}}</span>
           </div>
           <div class="userInfoRight">
             <img :src="item.userSeeSrc" /><span>{{item.seeNum}}</span>
@@ -123,6 +123,12 @@ export default {
     height:20px;
     border-radius:50%;
     margin:0 4px -5px 0;
+  }
+  span{
+    margin:0 5px;
+  }
+  .userName{
+    color:#ffa344;
   }
 }
 .userInfoRight{

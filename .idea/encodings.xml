@@ -8,9 +8,6 @@
     <file url="file://$PROJECT_DIR$/src/components/Main.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/components/Me.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/components/MyPanel/index.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/components/MyPanel/index.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/components/MyPanel/index.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/components/myPanel/index.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/vuex/modules/home/actions.js" charset="UTF-8" />
   </component>
 </project>

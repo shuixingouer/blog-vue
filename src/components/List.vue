@@ -1,6 +1,6 @@
 <template>
-  <div style="height:100%;" class="listMain">
-    <div v-for="item in lists" class="weuiPanelFather">
+  <div style="height:100%;">
+    <div v-for="item in lists" class="weuiPanelFather" :details="detailDate">
       <panel :list="item.list" :type="item.type"></panel>
     </div>
   </div>
@@ -8,7 +8,9 @@
 
 <script>
   import Panel from './MyPanel'
-  export default {
+  import { mapGetters } from 'vuex'
+
+export default {
     name: 'list',
     data () {
       return {
@@ -22,7 +24,8 @@
             dateNow: new Date(),
             seeNum: '11',
             userIconSrc: '../../static/userLogo/logo.jpg',
-            userSeeSrc: '../../static/icon/eye.png'
+            userSeeSrc: '../../static/icon/eye.png',
+            userNmae: 'xff'
           }]
         }, {
           type: '1',
@@ -34,7 +37,8 @@
             dateNow: new Date(),
             seeNum: '11',
             userIconSrc: '../../static/userLogo/logo.jpg',
-            userSeeSrc: '../../static/icon/eye.png'
+            userSeeSrc: '../../static/icon/eye.png',
+            userNmae: 'xff'
           }]
         }, {
           type: '1',
@@ -46,9 +50,27 @@
             dateNow: new Date(),
             seeNum: '11',
             userIconSrc: '../../static/userLogo/logo.jpg',
-            userSeeSrc: '../../static/icon/eye.png'
+            userSeeSrc: '../../static/icon/eye.png',
+            userNmae: 'xff'
           }]
-        }]
+        }],
+        detailsData: []
+      }
+    },
+    computed: {
+      ...mapGetters({
+        detailDate: 'getDetailDate'
+      })
+    },
+    created () {
+      this.getDetails()
+    },
+    methods: {
+      getDetails: function () {
+        this.$http.post('http://localhost:3000/date/detail/20170110.json').then((response) => {
+          this.detailsData = response.body.data
+          console.log(response)
+        })
       }
     },
     components: {
