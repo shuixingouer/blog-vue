@@ -8,9 +8,9 @@ import vue from 'vue'
 const _post = ({ url, query }, commit) => {
   let _url
   if (query) {
-    _url = `api/date/detail/${url}?${query}`
+    _url = `../../../../date/detail/${url}?${query}`
   } else {
-    _url = `api/date/detail/${url}`
+    _url = `../../../../date/detail/${url}`
   }
   return vue.http.post(_url).then((res) => {
     if (res.status >= 200 && res.status < 300) {

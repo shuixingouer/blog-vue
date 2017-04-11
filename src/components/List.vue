@@ -20,7 +20,7 @@ export default {
             src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
             title: '标题XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXXXXXXXXXXXXXXXX一',
             desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
-            url: '/component/cell',
+            url: './Detail',
             dateNow: new Date(),
             seeNum: '11',
             userIconSrc: '../../static/userLogo/logo.jpg',
@@ -33,7 +33,7 @@ export default {
             src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
             title: '标题XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXXXXXXXXXXXXXXXX一',
             desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
-            url: '/component/cell',
+            url: './Detail',
             dateNow: new Date(),
             seeNum: '11',
             userIconSrc: '../../static/userLogo/logo.jpg',
@@ -46,7 +46,7 @@ export default {
             src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
             title: '标题XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXXXXXXXXXXXXXXXX一',
             desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
-            url: '/component/cell',
+            url: './Detail',
             dateNow: new Date(),
             seeNum: '11',
             userIconSrc: '../../static/userLogo/logo.jpg',
@@ -54,7 +54,8 @@ export default {
             userNmae: 'xff'
           }]
         }],
-        detailsData: []
+        detailsData: [],
+        url: ''
       }
     },
     computed: {
@@ -67,7 +68,7 @@ export default {
     },
     methods: {
       getDetails: function () {
-        this.$http.post('http://localhost:3000/date/detail/20170110.json').then((response) => {
+        this.$http.post('../../static/date/detail/20170110.json').then((response) => {
           this.detailsData = response.body.data
           console.log(response)
         })

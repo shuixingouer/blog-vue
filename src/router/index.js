@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Main from '@/components/Main'
+import Detail from '@/components/Detail'
 import Login from '@/components/Login'
 import Me from '@/components/Me'
 
@@ -29,6 +30,11 @@ export default new Router({
           path: '/Me',
           name: 'Me',
           component: Me
+        },
+        {
+          path: '/Detail',
+          name: 'Detail',
+          component: Detail
         }
       ]
     }
