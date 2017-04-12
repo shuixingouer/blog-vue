@@ -1,6 +1,6 @@
 <template>
   <div style="height:100%;">
-    <div v-for="item in lists" class="weuiPanelFather" :details="detailDate">
+    <div v-for="item in listsData" class="weuiPanelFather" :details="detailDate">
       <panel :list="item.list" :type="item.type"></panel>
     </div>
   </div>
@@ -12,48 +12,10 @@
 
 export default {
     name: 'list',
+    props: ['listId'],
     data () {
       return {
-        lists: [{
-          type: '1',
-          list: [{
-            src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
-            title: '标题XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXXXXXXXXXXXXXXXX一',
-            desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
-            url: './Detail',
-            dateNow: new Date(),
-            seeNum: '11',
-            userIconSrc: '../../static/userLogo/logo.jpg',
-            userSeeSrc: '../../static/icon/eye.png',
-            userNmae: 'xff'
-          }]
-        }, {
-          type: '1',
-          list: [{
-            src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
-            title: '标题XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXXXXXXXXXXXXXXXX一',
-            desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
-            url: './Detail',
-            dateNow: new Date(),
-            seeNum: '11',
-            userIconSrc: '../../static/userLogo/logo.jpg',
-            userSeeSrc: '../../static/icon/eye.png',
-            userNmae: 'xff'
-          }]
-        }, {
-          type: '1',
-          list: [{
-            src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
-            title: '标题XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXXXXXXXXXXXXXXXX一',
-            desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
-            url: './Detail',
-            dateNow: new Date(),
-            seeNum: '11',
-            userIconSrc: '../../static/userLogo/logo.jpg',
-            userSeeSrc: '../../static/icon/eye.png',
-            userNmae: 'xff'
-          }]
-        }],
+        listsData: [],
         detailsData: [],
         url: ''
       }
@@ -64,13 +26,20 @@ export default {
       })
     },
     created () {
+      console.log(this.listId)
+      this.getLists(this.listId)
       this.getDetails()
     },
     methods: {
+      getLists: function (id) {
+        this.$http.post('../../static/date/channel/' + id + '.json').then((response) => {
+          this.listsData = response.body.data.lists
+          // console.log(this.listsData)
+        })
+      },
       getDetails: function () {
         this.$http.post('../../static/date/detail/20170110.json').then((response) => {
           this.detailsData = response.body.data
-          console.log(response)
         })
       }
     },

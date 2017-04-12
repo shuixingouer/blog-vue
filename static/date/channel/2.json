@@ -1,0 +1,49 @@
+{"code":200,
+"data":{
+  "lists": [{
+	"type": "1",
+	"list": [{
+	  "id":"20161104",
+	  "src": "",
+	  "title": "css",
+	  "desc": "由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。",
+	  "url": "./Detail",
+	  "dateNow": "20161104",
+	  "seeNum": "11",
+	  "userIconSrc": "../../static/userLogo/logo.jpg",
+	  "userSeeSrc": "../../static/icon/eye.png",
+	  "userNmae": "xff"
+	}]
+  }, {
+	"type": "1",
+	"list": [{
+	  "id":"20161105",
+	  "src": "",
+	  "title": "标题XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXXXXXXXXXXXXXXXX一",
+	  "desc": "由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。",
+	  "url": "./Detail",
+	  "dateNow": "20161104",
+	  "seeNum": "11",
+	  "userIconSrc": "../../static/userLogo/logo.jpg",
+	  "userSeeSrc": "../../static/icon/eye.png",
+	  "userNmae": "xff"
+	}]
+  }, {
+	"type": "1",
+	"list": [{
+	  "id":"20161106",
+	  "src": "",
+	  "title": "标题XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXXXXXXXXXXXXXXXX一",
+	  "desc": "由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。",
+	  "url": "./Detail",
+	  "dateNow": "20161104",
+	  "seeNum": "11",
+	  "userIconSrc": "../../static/userLogo/logo.jpg",
+	  "userSeeSrc": "../../static/icon/eye.png",
+	  "userNmae": "xff"
+	}]
+  }]
+	},
+	"error":"Success",
+	"status":"SUCESS"
+}

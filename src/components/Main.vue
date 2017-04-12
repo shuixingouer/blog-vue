@@ -1,7 +1,7 @@
 <template>
   <div>
     <tab :line-width=2 active-color='#fc378c' v-model="index">
-      <tab-item class="vux-center" :selected="selectedMenu === item" v-for="(item, index) in channelMenu" @click="selectedMenu = item" :key="index">{{item}}</tab-item>
+      <tab-item class="vux-center" :selected="selectedMenu === item" v-for="(item, index) in channelMenu" @click="selectedMenu = item" :key="index" v-bind:list-id="index">{{item}}</tab-item>
     </tab>
     <swiper v-model="index" height="100px" :show-dots="false">
       <swiper-item v-for="(item, index) in channelMenu" :key="index">
