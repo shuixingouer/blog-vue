@@ -1,6 +1,6 @@
 <template>
   <div style="height:100%;">
-    <div v-for="item in listsData" class="weuiPanelFather" :details="detailDate">
+    <div v-for="item in lists" class="weuiPanelFather" :details="detailDate">
       <panel :list="item.list" :type="item.type"></panel>
     </div>
   </div>
@@ -12,34 +12,26 @@
 
 export default {
     name: 'list',
-    props: ['listId'],
     data () {
       return {
-        listsData: [],
-        detailsData: [],
+        listsDate: [],
+        detailsDate: [],
         url: ''
       }
     },
+    props: ['lists'],
     computed: {
       ...mapGetters({
         detailDate: 'getDetailDate'
       })
     },
     created () {
-      console.log(this.listId)
-      this.getLists(this.listId)
       this.getDetails()
     },
     methods: {
-      getLists: function (id) {
-        this.$http.post('../../static/date/channel/' + id + '.json').then((response) => {
-          this.listsData = response.body.data.lists
-          // console.log(this.listsData)
-        })
-      },
       getDetails: function () {
         this.$http.post('../../static/date/detail/20170110.json').then((response) => {
-          this.detailsData = response.body.data
+          this.detailsDate = response.body.data
         })
       }
     },

@@ -1,6 +1,5 @@
 {"code":200,
-"data":{
-  "lists": [{
+"data":[{
 	"type": "1",
 	"list": [{
 	  "id":"20161104",
@@ -42,8 +41,7 @@
 	  "userSeeSrc": "../../static/icon/eye.png",
 	  "userNmae": "xff"
 	}]
-  }]
-	},
+  }],
 	"error":"Success",
 	"status":"SUCESS"
 }
