@@ -1,12 +1,12 @@
 <template>
   <div>
     <tab :line-width=2 active-color='#fc378c' v-model="index">
-      <tab-item class="vux-center" :selected="selectedMenu === index" v-for="(item, index) in channelMenu" @click="selectedMenu = index" :key="index" :lists="listsDate">{{item}}</tab-item>
+      <tab-item class="vux-center" :selected="selectedMenu === index" v-for="(item, index) in channelMenu" @click="selectedMenu = index" :key="index" :listsDate="listsDate">{{item}}</tab-item>
     </tab>
     <swiper v-model="index" height="100px" :show-dots="false">
       <swiper-item v-for="(item, index) in channelMenu" :key="index">
         <div class="tab-swiper vux-center" v-if="listsDate">
-          <list></list>
+          <list v-for="(item, index) in listsDate" :item="item" :key="index"></list>
         </div>
       </swiper-item>
     </swiper>
@@ -23,8 +23,7 @@
       return {
         channelMenu: ['全部', 'HTML', 'CSS', 'JavaScript', 'Node', 'JAVA'],
         selectedMenu: '2',
-        index: 2,
-        listsDate: []
+        index: 2
       }
     },
     computed: {

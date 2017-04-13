@@ -33,8 +33,8 @@ export const setListsDate = ({ commit }, id) => {
   return _post({ url, query }, commit).then((json) => {
     // console.log(json.status)
     if (json.status === 'SUCESS') {
-      console.log(JSON.stringify(json.data))
-      return commit('LISTS_DATE', JSON.stringify(json.data))
+      console.log(JSON.parse(JSON.stringify(json.data)))
+      return commit('LISTS_DATE', JSON.parse(JSON.stringify(json.data)))
     }
     return Promise.reject(new Error('LISTS_DATE failure'))
   }).catch((error) => {

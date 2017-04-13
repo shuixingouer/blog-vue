@@ -1,7 +1,7 @@
 <template>
   <div style="height:100%;">
-    <div v-for="item in lists" class="weuiPanelFather" :details="detailDate">
-      <panel :list="item.list" :type="item.type"></panel>
+    <div class="weuiPanelFather">
+      <panel :type="item.type" :list="item.list"></panel>
     </div>
   </div>
 </template>
@@ -12,14 +12,17 @@
 
 export default {
     name: 'list',
+    props: {
+      item: {
+        type: String
+      }
+    },
     data () {
       return {
-        listsDate: [],
         detailsDate: [],
         url: ''
       }
     },
-    props: ['lists'],
     computed: {
       ...mapGetters({
         detailDate: 'getDetailDate'
