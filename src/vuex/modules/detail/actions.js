@@ -8,9 +8,9 @@ import vue from 'vue'
 const _post = ({ url, query }, commit) => {
   let _url
   if (query) {
-    _url = `api/date/detail/${url}?${query}`
+    _url = `../../../../static/date/${url}/${query}`
   } else {
-    _url = `api/date/detail/${url}`
+    _url = `../../../../static/date/detail/${url}`
   }
   return vue.http.post(_url).then((res) => {
     if (res.status >= 200 && res.status < 300) {
@@ -27,13 +27,14 @@ const _post = ({ url, query }, commit) => {
  * @param  {Number} count             每页数量
  * @return {Promise}                  Promise
  */
-export const setDetailDate = ({ commit }) => {
-  const url = '20170110.json'
-  return _post({ url }, commit).then((json) => {
-    console.log(json.status)
+export const setDetailDate = ({ commit }, id) => {
+  const url = 'detail'
+  const query = id + '.json'
+  return _post({ url, query }, commit).then((json) => {
+        // console.log(json.status)
     if (json.status === 'SUCESS') {
-      console.log(json.data[0])
-      return commit('DETAIL_DATE', json.data)
+      console.log(JSON.parse(JSON.stringify(json.data)))
+      return commit('DETAIL_DATE', JSON.parse(JSON.stringify(json.data)))
     }
     return Promise.reject(new Error('DETAIL_DATE failure'))
   }).catch((error) => {

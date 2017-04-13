@@ -1,14 +1,13 @@
 <template>
   <div style="height:100%;">
     <div class="weuiPanelFather">
-      <panel :type="item.type" :list="item.list"></panel>
+        <panel :type="item.type" :list="item.list" :id="item.id"></panel>
     </div>
   </div>
 </template>
 
 <script>
   import Panel from './MyPanel'
-  import { mapGetters } from 'vuex'
 
 export default {
     name: 'list',
@@ -19,24 +18,9 @@ export default {
     },
     data () {
       return {
-        detailsDate: [],
-        url: ''
       }
-    },
-    computed: {
-      ...mapGetters({
-        detailDate: 'getDetailDate'
-      })
     },
     created () {
-      this.getDetails()
-    },
-    methods: {
-      getDetails: function () {
-        this.$http.post('../../static/date/detail/20170110.json').then((response) => {
-          this.detailsDate = response.body.data
-        })
-      }
     },
     components: {
       Panel
@@ -55,4 +39,7 @@ export default {
 .weuiPanelFather{
   margin-top:5px;
 }
+    .weuiPanelFatherLink{
+        display:block;
+    }
 </style>

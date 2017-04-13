@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Main from '@/components/Main'
 import Login from '@/components/Login'
 import Me from '@/components/Me'
+import Detail from '@/components/Detail'
 
 Vue.use(Router)
 
@@ -11,24 +12,29 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'home',
       component: Home,
-      redirect: '/Main',
+      redirect: '/main',
       children: [
         {
-          path: '/Main',
-          name: 'Main',
+          path: '/main',
+          name: 'main',
           component: Main
         },
         {
-          path: '/Login',
-          name: 'Login',
+          path: '/login',
+          name: 'login',
           component: Login
         },
         {
-          path: '/Me',
-          name: 'Me',
+          path: '/me',
+          name: 'me',
           component: Me
+        },
+        {
+          path: '/detail/:id',
+          name: 'detail',
+          component: Detail
         }
       ]
     }

@@ -5,11 +5,11 @@
         <router-view class="router-view"></router-view>
       </transition>
       <tabbar class="vux-demo-tabbar" slot="bottom">
-        <tabbar-item :link="{path:'/Main'}">
+        <tabbar-item :link="{path:'/main'}">
           <span class="demo-icon-22 vux-demo-tabbar-icon-home" slot="icon">&#xe637;</span>
           <span slot="label">文章</span>
         </tabbar-item>
-        <tabbar-item :link="{path:'/Me'}">
+        <tabbar-item :link="{path:'/me'}">
           <span class="demo-icon-22" slot="icon">&#xe633;</span>
           <span slot="label">我的</span>
         </tabbar-item>
