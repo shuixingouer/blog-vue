@@ -3,7 +3,7 @@
 	"type": "1",
   "id":"20161112",
 	"list": [{
-	  "src": "",
+	  "src": "../../static/date/images/20161112.jpg",
 	  "title": "请把双十一还给单身狗",
 	  "desc": "好生气哦",
 	  "url": "./detail/20161112",
@@ -17,7 +17,7 @@
 	"type": "1",
   "id":"20161109",
 	"list": [{
-	  "src": "",
+	  "src": "../../static/date/images/20161109.jpg",
 	  "title": "双十一买啥 - 剁手攻略",
 	  "desc": "期盼已久的马云爸爸家的大日子渐渐逼近",
 	  "url": "./detail/20161109",
@@ -31,7 +31,7 @@
   "type": "1",
   "id":"20161107",
   "list": [{
-	"src": "",
+	"src": "../../static/date/images/20161107.jpg",
 	"title": "别把内向作为别人讨厌你的理由",
 	"desc": "一个人不被喜欢，需要一个理由",
 	"url": "./detail/20161107",
@@ -45,7 +45,7 @@
   "type": "1",
   "id":"20161105",
   "list": [{
-	"src": "",
+	"src": "../../static/date/images/20161105.jpg",
 	"title": "这才是哄女友的正确方式",
 	"desc": "我真是为你们操碎了心啊~",
 	"url": "./detail/20161105",
@@ -59,7 +59,7 @@
   "type": "1",
   "id":"20161102",
   "list": [{
-	"src": "",
+	"src": "../../static/date/images/20161102.jpg",
 	"title": "有种冷叫自己觉得冷系列",
 	"desc": "愚蠢的人类，不穿毛衣冻死你吖的！",
 	"url": "./detail/20161102",
@@ -73,7 +73,7 @@
   "type": "1",
   "id":"20161029",
   "list": [{
-	"src": "",
+	"src": "../../static/date/images/20161029.jpg",
 	"title": "程序喵的复仇之路",
 	"desc": "让你戳朕屏幕~他喵的~",
 	"url": "./detail/20161029",
@@ -87,7 +87,7 @@
   "type": "1",
   "id":"20161026",
   "list": [{
-	"src": "",
+	"src": "../../static/date/images/20161026.jpg",
 	"title": "逗逼程序员的爆笑趣事",
 	"desc": "第一张就笑喷了~~~",
 	"url": "./detail/20161026",

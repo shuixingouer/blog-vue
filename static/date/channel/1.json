@@ -3,7 +3,7 @@
 	"type": "1",
   "id":"20161108",
 	"list": [{
-	  "src": "",
+	  "src": "../../static/date/images/20161108.jpg",
 	  "title": "Webpack（三）",
 	  "desc": "由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。",
 	  "url": "./detail/20161108",
@@ -17,7 +17,7 @@
 	"type": "1",
   "id":"20161103",
 	"list": [{
-	  "src": "",
+	  "src": "../../static/date/images/20161103.jpg",
 	  "title": "Parse Server",
 	  "desc": "在本地部署Parse Server",
 	  "url": "./detail/20161103",
@@ -31,7 +31,7 @@
 	"type": "1",
   "id":"20161027",
 	"list": [{
-	  "src": "",
+	  "src": "../../static/date/images/20161027.jpg",
 	  "title": "Webpack（二）",
 	  "desc": "放大招~",
 	  "url": "./detail/20161027",
@@ -45,7 +45,7 @@
   "type": "1",
   "id":"20161020",
   "list": [{
-	"src": "",
+	"src": "../../static/date/images/20161020.jpg",
 	"title": "Webpack（一）",
 	"desc": "webpack这么火爆，没有理由不学习",
 	"url": "./detail/20161020",
@@ -59,7 +59,7 @@
   "type": "1",
   "id":"20161003",
   "list": [{
-	"src": "",
+	"src": "../../static/date/images/20161003.jpg",
 	"title": "Grunt（二）",
 	"desc": "介绍Grunt的主要插件的使用",
 	"url": "./detail/20161003",
@@ -73,7 +73,7 @@
   "type": "1",
   "id":"20161002",
   "list": [{
-	"src": "",
+	"src": "../../static/date/images/20161002.jpg",
 	"title": "Grunt（一）",
 	"desc": "转眼国庆小长假第二天就要过去啦，小伙伴们都去哪里浪啦。",
 	"url": "./detail/20161002",

@@ -3,7 +3,7 @@
 	"type": "1",
   "id":"20161016",
 	"list": [{
-	  "src": "",
+	  "src": "../../static/date/images/20161016.jpg",
 	  "title": "React（二）",
 	  "desc": "为什么React这么火，为什么我们要选择React",
 	  "url": "./detail/20161016",
@@ -17,7 +17,7 @@
   "type": "1",
   "id":"20161015",
   "list": [{
-	"src": "",
+	"src": "../../static/date/images/20161015.jpg",
 	"title": "React（一）",
 	"desc": "为什么React这么火，为什么我们要选择React",
 	"url": "./detail/20161015",
@@ -31,7 +31,7 @@
   "type": "1",
   "id":"20161014",
   "list": [{
-	"src": "",
+	"src": "../../static/date/images/20161014.jpg",
 	"title": "Bootstrap CSS（三）",
 	"desc": "介绍Bootstrap的按钮/图片/帮助类/小图标",
 	"url": "./detail/20161014",
@@ -45,7 +45,7 @@
 	"type": "1",
   "id":"20161013",
 	"list": [{
-	  "src": "",
+	  "src": "../../static/date/images/20161013.jpg",
 	  "title": "Bootstrap CSS（二）",
 	  "desc": "介绍Bootstrap的表单",
 	  "url": "./detail/20161013",
@@ -59,7 +59,7 @@
   "type": "1",
   "id":"20161012",
   "list": [{
-	"src": "",
+	"src": "../../static/date/images/20161012.jpg",
 	"title": "Bootstrap CSS（一）",
 	"desc": "介绍bootstrap的响应式/文本/列表/表格",
 	"url": "./detail/20161012",
