@@ -42,4 +42,10 @@ export default {
     .weuiPanelFatherLink{
         display:block;
     }
+    .tab-swiper{
+        margin-bottom:55px;
+    }
+  a.weui-media-box:active{
+      background:none;
+  }
 </style>
