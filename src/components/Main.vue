@@ -21,9 +21,9 @@
     name: 'main',
     data () {
       return {
-        channelMenu: ['全部', 'HTML', 'CSS', 'JavaScript', 'Node', 'JAVA'],
-        selectedMenu: '2',
-        index: 2
+        channelMenu: ['前端基础', '前端工具', '前端框架', '前端趣闻', '前端资讯'],
+        selectedMenu: '0',
+        index: 0
       }
     },
     computed: {
