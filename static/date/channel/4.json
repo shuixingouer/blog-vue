@@ -3,7 +3,7 @@
 	"type": "1",
   "id":"20170110",
 	"list": [{
-	  "src": "/images/20170110.jpg",
+	  "src": "../../static/date/images/20170110.jpg",
 	  "title": "未来十年，最赚钱的16大行业全在这里！",
 	  "desc": "未来10年，又有哪些新产业值得我们期待？",
 	  "url": "./detail/20170110",
@@ -17,7 +17,7 @@
 	"type": "1",
   "id":"20161206",
 	"list": [{
-	  "src": "/images/20161206.jpg",
+	  "src": "../../static/date/images/20161206.jpg",
 	  "title": "GitHub 中国区前 100 名到底是什么样的人?",
 	  "desc": "活跃在技术社区的牛人到底是何许人也！",
 	  "url": "./detail/20161206",
@@ -26,20 +26,6 @@
 	  "userIconSrc": "../../static/userLogo/logo.jpg",
 	  "userSeeSrc": "../../static/icon/eye.png",
 	  "userNmae": "rt"
-	}]
-  }, {
-	"type": "1",
-  "id":"20161106",
-	"list": [{
-	  "src": "",
-	  "title": "4444",
-	  "desc": "由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。",
-	  "url": "./detail/20161106",
-	  "dateNow": "20161104",
-	  "seeNum": "11",
-	  "userIconSrc": "../../static/userLogo/logo.jpg",
-	  "userSeeSrc": "../../static/icon/eye.png",
-	  "userNmae": "werf"
 	}]
   }],
 	"error":"Success",
