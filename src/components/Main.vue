@@ -32,7 +32,7 @@
       })
     },
     created () {
-      this.$store.dispatch('setListsDate', 2)
+      this.$store.dispatch('setListsDate', 0)
     },
     methods: {
       queryTrendData: function (index) {
