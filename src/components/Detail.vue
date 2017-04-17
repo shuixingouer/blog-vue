@@ -1,5 +1,18 @@
 <template>
-  <div>详情页面
+  <div class="detailMiddle">
+    <div class="title">
+      <h3>{{item.title}}</h3>
+      <p>
+        <span>{{item.author}}</span>
+        <span>{{item.time}}</span>
+      </p>
+    </div>
+    <div class="{{item.articleClassName}}">
+      <p>
+        <img src="{{item.start.imagesUrl}}">
+        {{item.start.desc}}
+      </p>
+    </div>
   </div>
 </template>
 
