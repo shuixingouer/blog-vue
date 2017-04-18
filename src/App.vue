@@ -14,6 +14,7 @@ export default {
 @import '~vux/src/styles/reset.less';
 @import '~vux/src/styles/1px.less';
 @import '~vux/src/styles/tap.less';
+@import '../static/bootstrap/css/bootstrap.min.css';
 
 body {
   background-color: #fbf9fe;

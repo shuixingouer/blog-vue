@@ -33,8 +33,8 @@ export const setDetailDate = ({ commit }, id) => {
   return _post({ url, query }, commit).then((json) => {
         // console.log(json.status)
     if (json.status === 'SUCESS') {
-      console.log(JSON.parse(JSON.stringify(json.data)))
-      return commit('DETAIL_DATE', JSON.parse(JSON.stringify(json.data)))
+      // console.log(json.data)
+      return commit('DETAIL_DATE', json.data)
     }
     return Promise.reject(new Error('DETAIL_DATE failure'))
   }).catch((error) => {

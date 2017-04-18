@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="detailMiddle">
     <div class="title">
       <h3>{{item.title}}</h3>
@@ -7,23 +8,27 @@
         <span>{{item.time}}</span>
       </p>
     </div>
-    <div class="articleBody">{{item.body}}</div>
-    <div v-if="item.article" :class="item.article.articleClassName">
-    <p v-if="item.article.start" v-for="startList in item.article.start">
-      <p v-if="startList.imagesUrl"><img :src="'../../static/date/images/'+item.id+'/'+startList.imagesUrl" /></p>
-      <p v-if="startList.desc">{{startList.desc}}</p>
-    </p>
-    <p v-if="item.article.articleBody" v-for="articleBodyList in item.article.articleBody">
-      <p v-if="articleBodyList.desc">{{articleBodyList.desc}}</p>
-    <pre v-if="articleBodyList.code">{{articleBodyList.code}}</pre>
-    <p v-if="articleBodyList.imagesUrl"><img :src="'../../static/date/images/'+item.id+'/articleBodyList.imagesUrl" :style="{'width':articleBodyList.imagesWidth}"/></p>
-      <p v-if="articleBodyList.imagesDesc">{{articleBodyList.imagesDesc}}</p>
-    </p>
-    <p v-if="item.article.end" v-for="endList in item.article.end">
-      <p v-if="endList.imagesUrl"><img :src="'../../static/date/images/'+item.id/endList.imagesUrl" :style="{'width':endList.imagesWidth}"/></p>
-      <p v-if="endList.desc">{{endList.desc}}</p>
-    </p>
-    </div>
+    <article>
+    <div class="articleBody" v-html="item.body"></div>
+      <div v-if="item.article" :class="item.article.articleClassName">
+        <div v-if="item.article.start" v-for="startList in item.article.start">
+          <p v-if="startList.imagesUrl"><img :src="'../../static/date/images/'+item.id+'/'+startList.imagesUrl" :style="{'width':startList.imagesWidth}" /></p>
+          <p v-if="startList.desc" class="ta_c" v-html="startList.desc"></p>
+        </div>
+        <div v-if="item.article.articleBody" v-for="articleBodyList in item.article.articleBody">
+          <h4 v-if="articleBodyList.num || articleBodyList.title"><span v-if="articleBodyList.num">{{articleBodyList.num}}</span><b v-if="articleBodyList.title">{{articleBodyList.title}}</b></h4>
+          <p v-if="articleBodyList.desc" v-html="articleBodyList.desc"></p>
+          <pre v-if="articleBodyList.code" v-html="articleBodyList.code"></pre>
+          <p v-if="articleBodyList.imagesUrl"><img :src="'../../static/date/images/'+item.id+'/'+articleBodyList.imagesUrl" :style="{'width':articleBodyList.imagesWidth}"/></p>
+          <p v-if="articleBodyList.imagesDesc" v-html="articleBodyList.imagesDesc"></p>
+        </div>
+        <div v-if="item.article.end" v-for="endList in item.article.end">
+          <p v-if="endList.imagesUrl"><img :src="'../../static/date/images/'+item.id+'/'+endList.imagesUrl" :style="{'width':endList.imagesWidth}"/></p>
+          <p v-if="endList.desc" v-html="endList.desc"></p>
+        </div>
+      </div>
+    </article>
+  </div>
   </div>
 </template>
 
@@ -47,68 +52,72 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style lang="less">
 .detailMiddle{
-  padding:0 0.416rem;
+  padding:0 20px;
+  background:#fff;
 .title{
-    margin-bottom:0.416rem;
+    margin-bottom:30px;
+    overflow: hidden;
     h3{
-      font-size:0.7rem;
+      font-size:30px;
       color:#333;
-      line-height:1rem;
+      line-height:36px;
     }
     span{
       display:inline-block;
-      margin-right:0.2rem;
-      font-size:0.333rem;
+      margin-right:10px;
+      font-size:12px;
       color:#9e9e9e;
     }
   }
   article{
-    font-size:0.416rem;
+    font-size:18px;
     color:#666;
-    line-height:0.694rem;
+    line-height:24px;
     img{
       width:100%;
-      margin:0.4rem auto 0 auto;
+      margin:10px auto 0 auto;
     }
     p{
-      margin-top:0.4rem;
+      margin-top:20px;
+
     }
-    //items1æ•°å­—æŽ’åºï¼Œè‰²è°ƒé»‘è‰²
+    .ta_c{
+       text-align:center;
+     }
   .items_1{
       h4 {
-        margin-top: 0.28rem;
-        font-size: 0.444rem;
+        margin-top: 15px;
+        font-size: 24px;
         color: #555;
-        line-height: 0.6rem;
-        padding: 0.4rem 0;
+        line-height: 30px;
+        padding: 16px 0;
         border-bottom: 1px solid #757575;
         span {
           display: inline-block;
-          margin-right: 0.138rem;
-          padding: 0 0.138rem;
+          margin-right: 10px;
+          padding: 0 10px;
           color: #fff;
           background: #555;
         }
       }
     }
-    //items_2æ•°å­—æŽ’åºï¼Œè‰²è°ƒæ©™è‰²
   .items_2{
       h4 {
-        font-size: 0.444rem;
+        font-size: 18px;
         color: #ff6600;
-        line-height: 0.6rem;
-        margin:0.4rem 0;
+        line-height: 30px;
+        margin:16px 0;
         border-bottom: 1px solid #ff6600;
         font-weight:bold;
         overflow:visible;
         span{
           display:inline-block;
-          line-height: 0.6rem;
+          line-height: 30px;
           color:#fff;
-          margin-right:0.2rem;
-          padding:0.1rem 0.2rem;
+          margin-right:10px;
+          padding:5px 10px;
           background:#ff6600;
         }
       }
@@ -117,23 +126,22 @@
         font-weight:bold;
       }
     .code{
-        padding:0.4rem;
+        padding:18px;
         background:#f0f0f0;
       }
     }
   }
-  //items_3æ•°å­—æŽ’åºï¼Œè‰²è°ƒå¢¨è“è‰²
 .items_3{
     h4 {
-      font-size: 0.444rem;
+      font-size: 24px;
       color: #2e97a7;
-      line-height: 0.6rem;
-      margin:1rem 0 0.4rem;
+      line-height: 30px;
+      margin:72px 0 18px;
       span{
         display:inline-block;
-        margin-right:0.2rem;
-        padding:0 0.14rem;
-        font-size: 0.25rem;
+        margin-right:10px;
+        padding:0 10px;
+        font-size: 24px;
         border:0.1rem solid #fff;
         box-shadow:0 0 1px #2e97a7;
         background:#2e97a7;
@@ -146,20 +154,19 @@
         border-radius:50%;
         border:1px solid #2e97a7;
         color:#2e97a7;
-        font-size:0.24rem;
-        height:0.5rem;
-        line-height:0.5rem;
-        padding:0 0.15rem;
-        margin-right:0.1rem;
+        font-size:14px;
+        height:28px;
+        line-height:28px;
+        padding:0 10px;
+        margin-right:8px;
       }
     }
   }
-  //items_4ç”¨äºŽå•ç‹¬çš„cssæˆ–jså°çŸ¥è¯†ç‚¹çš„è¯¦è§£çš„æŽ’åºï¼Œæ²¡æœ‰æ•°å­—æŽ’åºï¼Œè‰²è°ƒé»‘è‰²
 .items_4{
     h4 {
       display:block;
-      margin:1rem 0 0.4rem;
-      font-size:0.416rem;
+      margin:72px 0 18px;
+      font-size:24px;
       color:#666;
       text-align:center;
       span{
@@ -168,8 +175,8 @@
       b{
         position:relative;
         display:inline-block;
-        line-height:1rem;
-        padding:0 0.5rem;
+        line-height:60px;
+        padding:0 36px;
         border:2px solid #666;
       &:after{
           content:"";
@@ -183,19 +190,18 @@
       }
     }
   }
-  //items_5ç”¨äºŽæ®µå­
 .items_5{
     h4 {
       display:block;
-      margin:2rem 0 0.4rem;
-      font-size:0.4rem;
-      line-height:0.63rem;
+      margin:140px 0 30px;
+      font-size:18px;
+      line-height:36px;
       color:#666;
       text-align:center;
       span{
       &:after{
           content:".";
-          margin-right:0.1rem;
+          margin-right:8px;
         }
       }
       b{
@@ -203,13 +209,12 @@
       }
     }
   }
-  //items_6ç”¨äºŽä¸‡åœ£èŠ‚
 .items_6{
     h4 {
       display:block;
-      margin:1rem 0 0.5rem;
-      font-size:0.5rem;
-      line-height:1rem;
+      margin:72px 0 36px;
+      font-size:16px;
+      line-height:36px;
       color:#000;
     &:before{
         display:block;
@@ -217,16 +222,16 @@
         content:"";
         background:url(../../static/date/images/HalloweenTitle.jpg) no-repeat;
         background-size:100%;
-        width:1rem;
-        height:1rem;
-        margin:0 0.2rem 0;
+        width:36px;
+        height:36px;
+        margin:0 15px 0;
       }
       span{
-        padding:0 0 0 0.2rem;
+        padding:0 0 0 14px;
         border-left:2px solid #000;
       &:after{
           content:".";
-          margin:0 0.1rem;
+          margin:0 8px;
         }
       }
       b{

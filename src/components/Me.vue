@@ -2,7 +2,7 @@
   <div>
     <!--头像-->
     <blur :blur-amount=40 :url="url">
-      <p class="center"><img :src="url"><br/>水星</p>
+      <p class="center"><img :src="url"><br/>大前端web讲堂</p>
     </blur>
     <!--用户选项-->
     <card>
