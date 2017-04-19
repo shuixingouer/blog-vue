@@ -3,7 +3,7 @@
     <tab :line-width=2 active-color='#fc378c' v-model="index">
       <tab-item class="vux-center" :selected="selectedMenu === index" v-for="(item, index) in channelMenu" @click="selectedMenu = index" :key="index">{{item}}</tab-item>
     </tab>
-    <swiper v-model="index" height="100px" :show-dots="false">
+    <swiper v-model="index" height="100px" :show-dots="false" :threshold="1000">
       <swiper-item v-for="(item, index) in channelMenu" :key="index">
         <div class="tab-swiper vux-center" v-if="listsDate">
           <list v-for="(item, index) in listsDate" :item="item" :key="index"></list>
